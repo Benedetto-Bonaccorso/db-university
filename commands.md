@@ -6,7 +6,10 @@ select * from `students` where date_of_birth like '1990%';
 
 select * from `courses` where cfu > 10;
 
-select * from `students` where date_of_birth like '1992%'; (soluzione temporanea perchè non riesco a calcolare l'età dinamicamente) 
+{
+    select * from `students` where date_of_birth like '1992%'; (soluzione temporanea perchè non riesco a calcolare l'età dinamicamente)
+    select * from `students` where (datediff(curdate(), date_of_birth)/365)='30'; (mi da un solo risultato)
+} 
 
 select * from `courses` where year = 1 and period = 'I semestre';
 
@@ -16,4 +19,4 @@ select * from `degrees` where `level` = 'magistrale';
 
 select count(0) from `departments`;
 
-Quanti sono gli insegnanti che non hanno un numero di telefono? (50) HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+select count(0) from `teachers` where `phone` IS NULL;
