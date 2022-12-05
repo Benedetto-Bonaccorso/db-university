@@ -6,10 +6,7 @@ select * from `students` where date_of_birth like '1990%';
 
 select * from `courses` where cfu > 10;
 
-{
-    select * from `students` where date_of_birth like '1992%'; (soluzione temporanea perchè non riesco a calcolare l'età dinamicamente)
-    select * from `students` where (datediff(curdate(), date_of_birth)/365)='30'; (mi da un solo risultato)
-} 
+select * from `students` where (datediff(curdate(), date_of_birth)/365)>'30';
 
 select * from `courses` where year = 1 and period = 'I semestre';
 
